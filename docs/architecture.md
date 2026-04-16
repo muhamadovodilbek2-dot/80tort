@@ -1,8 +1,8 @@
-# AzizbekCE NFT Studio Arxitekturasi
+# Odilbek NFT Studio Arxitekturasi
 
 ## 1. Maqsad
 
-`AzizbekCE NFT Studio` bitta professional dApp ichida quyidagi oqimni birlashtiradi:
+`Odilbek NFT Studio` bitta professional dApp ichida quyidagi oqimni birlashtiradi:
 
 - NFT yaratish
 - metadata tayyorlash
@@ -19,7 +19,7 @@ User Wallet (MetaMask)
 React Frontend (Vite + ethers)
         |
         v
-AzizbekCECollection.sol
+OdilbekCollection.sol
         |
         +--> ERC-721 minting
         +--> Proposal creation
@@ -29,7 +29,7 @@ AzizbekCECollection.sol
 
 ## 3. Smart-kontrakt modullari
 
-Asosiy kontrakt: [contracts/contracts/AzizbekCECollection.sol](../contracts/contracts/AzizbekCECollection.sol)
+Asosiy kontrakt: [contracts/contracts/OdilbekCollection.sol](../contracts/contracts/OdilbekCollection.sol)
 
 ### NFT qatlami
 

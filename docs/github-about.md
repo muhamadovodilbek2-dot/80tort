@@ -8,7 +8,7 @@ Quyidagi matnlar repository’ni GitHub’da professional ko'rinishda bezash uch
 
 ## About bo'limi uchun qisqa matn
 
-`AzizbekCE uchun ishlab chiqilgan NFT minting va token-based governance platformasi.`
+`Odilbek uchun ishlab chiqilgan NFT minting va token-based governance platformasi.`
 
 ## Tavsiya etiladigan topics
 
@@ -16,4 +16,4 @@ Quyidagi matnlar repository’ni GitHub’da professional ko'rinishda bezash uch
 
 ## README birinchi paragraf uchun qisqa variant
 
-`AzizbekCE NFT Studio bu NFT yaratish, mint qilish va community governance funksiyalarini bitta zamonaviy dApp ichida jamlagan professional Web3 loyiha.`
+`Odilbek NFT Studio bu NFT yaratish, mint qilish va community governance funksiyalarini bitta zamonaviy dApp ichida jamlagan professional Web3 loyiha.`

@@ -4,10 +4,10 @@ theme: default
 paginate: true
 ---
 
-# AzizbekCE NFT Studio
+# Odilbek NFT Studio
 
 Professional NFT minting va governance dApp  
-Asosiy hamyon: `0xA89c45b89b0558e866c5B983E27a61Df6b0FA968`
+Asosiy hamyon: `0x7b6AAE8F15b2C6b6d4F5b1Aa1970639e37b4Bd8A`
 
 ---
 
