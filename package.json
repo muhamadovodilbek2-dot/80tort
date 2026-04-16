@@ -1,0 +1,13 @@
+{
+  "name": "azizbekce-nft-studio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "contracts:compile": "npm --prefix contracts run compile",
+    "contracts:test": "npm --prefix contracts run test",
+    "contracts:deploy:sepolia": "npm --prefix contracts run deploy:sepolia",
+    "contracts:export-abi": "npm --prefix contracts run export:abi",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "frontend:build": "npm --prefix frontend run build"
+  }
+}

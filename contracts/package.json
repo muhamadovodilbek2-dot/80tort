@@ -1,0 +1,21 @@
+{
+  "name": "azizbekce-contracts",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy:sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
+    "deploy:amoy": "npx hardhat run scripts/deploy.js --network amoy",
+    "export:abi": "node scripts/export-abi.js"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.6",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.17",
+    "solc": "0.8.20"
+  }
+}

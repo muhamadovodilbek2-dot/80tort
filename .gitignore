@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.local
+.DS_Store
+
+contracts/artifacts/
+contracts/cache/
+contracts/typechain-types/
+contracts/coverage/
+
+frontend/dist/
+*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
