@@ -2,6 +2,8 @@
   "name": "azizbekce-contracts",
   "private": true,
   "version": "1.0.0",
+  "description": "AzizbekCE NFT Studio smart-kontraktlari: ERC-721 minting, treasury va governance.",
+  "author": "AzizbekCE <azizbekce@gmail.com>",
   "scripts": {
     "compile": "npx hardhat compile",
     "test": "npx hardhat test",

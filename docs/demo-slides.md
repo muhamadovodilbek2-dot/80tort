@@ -6,8 +6,8 @@ paginate: true
 
 # AzizbekCE NFT Studio
 
-Professional NFT minting + governance dApp  
-Owner wallet: `0xA89c45b89b0558e866c5B983E27a61Df6b0FA968`
+Professional NFT minting va governance dApp  
+Asosiy hamyon: `0xA89c45b89b0558e866c5B983E27a61Df6b0FA968`
 
 ---
 
@@ -28,7 +28,7 @@ Owner wallet: `0xA89c45b89b0558e866c5B983E27a61Df6b0FA968`
 
 ---
 
-# Smart Contract
+# Smart-kontrakt
 
 - `mint`, `batchMint`, `ownerMint`
 - `createProposal`, `castVote`, `cancelProposal`, `executeProposal`
@@ -37,13 +37,13 @@ Owner wallet: `0xA89c45b89b0558e866c5B983E27a61Df6b0FA968`
 
 ---
 
-# Frontend Experience
+# Frontend tajribasi
 
 - MetaMask wallet ulanishi
-- mint studio with custom or generated metadata URI
-- live stats cards and launch control panel
-- collector gallery with token preview
-- governance board with vote and execute flows
+- custom yoki avtomatik metadata URI bilan mint studio
+- live statistika kartalari va launch control panel
+- token preview bilan collector gallery
+- vote va execute oqimlari bilan governance board
 
 ---
 
@@ -62,7 +62,7 @@ Owner wallet: `0xA89c45b89b0558e866c5B983E27a61Df6b0FA968`
 - toza folder structure
 - testlar va deploy skriptlari
 - GitHub-ready README
-- reusable UI architecture
+- qayta ishlatish mumkin bo'lgan UI arxitekturasi
 - testnet deployment uchun env-driven setup
 
 ---

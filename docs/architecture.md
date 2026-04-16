@@ -1,4 +1,4 @@
-# AzizbekCE NFT Studio Architecture
+# AzizbekCE NFT Studio Arxitekturasi
 
 ## 1. Maqsad
 
@@ -10,7 +10,7 @@
 - holder-only governance
 - wallet-connected frontend demo
 
-## 2. High-Level Arxitektura
+## 2. Yuqori darajadagi arxitektura
 
 ```text
 User Wallet (MetaMask)
@@ -29,15 +29,15 @@ AzizbekCECollection.sol
 
 ## 3. Smart-kontrakt modullari
 
-Asosiy kontrakt: [AzizbekCECollection.sol](/c:/Users/User/CE/4-topshiriq/contracts/contracts/AzizbekCECollection.sol)
+Asosiy kontrakt: [contracts/contracts/AzizbekCECollection.sol](../contracts/contracts/AzizbekCECollection.sol)
 
-### NFT Layer
+### NFT qatlami
 
 - `ERC721Enumerable`: wallet ichidagi tokenlarni ko'rish uchun
 - `ERC721URIStorage`: har bir token uchun alohida metadata URI saqlash uchun
 - `mint`, `batchMint`, `ownerMint`: mint oqimlari
 
-### Governance Layer
+### Governance qatlami
 
 - `Proposal` struct: title, description, proposer, deadline, vote natijalari
 - `createProposal`: holder-only proposal yaratish
@@ -46,7 +46,7 @@ Asosiy kontrakt: [AzizbekCECollection.sol](/c:/Users/User/CE/4-topshiriq/contrac
 - `executeProposal`: deadline’dan keyin natijani finalize qilish
 - `cancelProposal`: zero-vote holatda proposalni bekor qilish
 
-### Admin Layer
+### Admin qatlami
 
 - `pause`, `unpause`
 - `setSaleActive`
@@ -66,7 +66,7 @@ Asosiy kontrakt: [AzizbekCECollection.sol](/c:/Users/User/CE/4-topshiriq/contrac
 
 ## 5. Frontend Arxitekturasi
 
-Asosiy UI: [frontend/src/App.tsx](/c:/Users/User/CE/4-topshiriq/frontend/src/App.tsx)
+Asosiy UI: [frontend/src/App.tsx](../frontend/src/App.tsx)
 
 ### UI bloklari
 
@@ -76,7 +76,7 @@ Asosiy UI: [frontend/src/App.tsx](/c:/Users/User/CE/4-topshiriq/frontend/src/App
 - Governance Board
 - Collector Gallery
 
-### Web3 integratsiya
+### Web3 integratsiyasi
 
 - `ethers.BrowserProvider` orqali wallet connect
 - `getContract(...)` helper orqali contract runner yaratish
@@ -94,7 +94,7 @@ Loyiha ikki xil metadata oqimini qo'llab-quvvatlaydi:
 
 Shu yondashuv foydalanuvchiga API key yoki qo'shimcha backend bo'lmasa ham NFT mint qilish imkonini beradi.
 
-## 7. Deploy Pipeline
+## 7. Deploy pipeline
 
 ### Contract deploy
 

@@ -3,6 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "description": "AzizbekCE NFT Studio uchun React, Vite va ethers asosidagi frontend dashboard.",
+  "author": "AzizbekCE <azizbekce@gmail.com>",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",

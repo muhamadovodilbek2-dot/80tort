@@ -1,24 +1,60 @@
 # AzizbekCE NFT Studio
 
-Professional darajadagi NFT minting va holder-governance dApp. Loyiha `AzizbekCE` brendi uchun tayyorlangan bo'lib, ERC-721 kolleksiya, token-based ovoz berish, metadata builder, testnet deploy skriptlari va polished frontend interfeysni o'z ichiga oladi.
+`AzizbekCE NFT Studio` bu NFT yaratish, mint qilish va holder-governance jarayonlarini bitta professional Web3 ilovada birlashtirgan to'liq dApp loyihasi. Loyiha Solidity asosidagi ERC-721 smart-kontrakt, React frontend, deploy skriptlari, testlar va taqdimot hujjatlari bilan GitHub’ga joylashga tayyor holatda ishlab chiqilgan.
+
+## Qisqacha tavsif
+
+Bu loyiha quyidagi vazifalarni amalda bajaradi:
+
+- NFT kolleksiya yaratish
+- foydalanuvchi tomonidan NFT mint qilish
+- metadata URI bilan ishlash
+- holder-only proposal yaratish
+- token ID asosida ovoz berish
+- proposal cancel va execute qilish
+- testnet deploy uchun tayyor pipeline
+- professional, responsive va demo uchun qulay frontend
 
 ## Asosiy imkoniyatlar
 
-- ERC-721 NFT kolleksiya yaratish va mint qilish
-- `data:` metadata URI yoki `ipfs://...` URI bilan NFT chiqarish
-- Holder-only proposal yaratish
-- Token ID asosida vote qilish, ya'ni bir token bir proposalga faqat bir marta ovoz beradi
-- Proposal cancel va execute oqimlari
-- Treasury withdraw, sale toggle, pause, mint parametrlarini boshqarish
-- React + TypeScript frontend orqali wallet ulanishi va live dashboard
-- GitHub uchun tayyor loyiha struktura, README va demo slaydlar
+- `ERC-721` asosidagi NFT kolleksiya
+- `mint`, `batchMint`, `ownerMint` funksiyalari
+- `data:` yoki `ipfs://` metadata bilan ishlash
+- NFT egalarigagina ruxsat berilgan governance oqimi
+- har bir token bir proposal uchun faqat bir marta vote qila oladi
+- treasury withdraw va sale management
+- `pause / unpause` xavfsizlik boshqaruvi
+- `ethers v6` orqali frontend-kontrakt integratsiyasi
+- demo va taqdimot uchun tayyor UX
 
-## Tech Stack
+## Texnologiyalar
 
-- Smart contracts: Solidity, Hardhat, OpenZeppelin
-- Frontend: React, Vite, TypeScript, ethers v6
-- UX/UI: custom CSS system, responsive glassmorphism editorial layout
-- Deployment: Sepolia yoki Polygon Amoy uchun env-driven skriptlar
+- Smart-kontrakt: `Solidity`, `Hardhat`, `OpenZeppelin`
+- Frontend: `React`, `Vite`, `TypeScript`, `ethers`
+- Testlash: `Hardhat test`, `chai`
+- Dizayn: custom CSS, responsive editorial layout
+- Deploy tayyorgarligi: `Sepolia` va `Polygon Amoy`
+
+## Arxitektura
+
+Yuqori darajadagi oqim:
+
+```text
+MetaMask / Wallet
+        |
+        v
+React Frontend (Vite + ethers)
+        |
+        v
+AzizbekCECollection.sol
+        |
+        +--> NFT minting
+        +--> Proposal creation
+        +--> Token-based voting
+        +--> Treasury management
+```
+
+Batafsil arxitektura hujjati: [docs/architecture.md](docs/architecture.md)
 
 ## Loyiha strukturasi
 
@@ -31,23 +67,62 @@ Professional darajadagi NFT minting va holder-governance dApp. Loyiha `AzizbekCE
 │   └── test/AzizbekCECollection.js
 ├── docs
 │   ├── architecture.md
-│   └── demo-slides.md
+│   ├── demo-slides.md
+│   └── github-about.md
 ├── frontend
-│   └── src
+│   ├── src/App.tsx
+│   ├── src/components
+│   ├── src/lib
+│   └── src/config
+├── .env.example
 └── README.md
 ```
 
-## Smart-kontrakt arxitekturasi
+## Smart-kontrakt imkoniyatlari
 
-Kontrakt [contracts/contracts/AzizbekCECollection.sol](/c:/Users/User/CE/4-topshiriq/contracts/contracts/AzizbekCECollection.sol) ichida yozilgan.
+Asosiy kontrakt: [contracts/contracts/AzizbekCECollection.sol](contracts/contracts/AzizbekCECollection.sol)
 
-- `mint` va `batchMint`: foydalanuvchi NFT mint qiladi
-- `ownerMint`: admin maxsus mint qiladi
-- `createProposal`: NFT holder governance proposal yaratadi
-- `castVote`: token ID ro'yxati bilan ovoz beradi
-- `cancelProposal`: proposer yoki owner, agar hali vote bo'lmagan bo'lsa, proposalni bekor qiladi
-- `executeProposal`: deadline tugagach natijani finalize qiladi
-- `withdraw`, `pause`, `setSaleActive`, `setMintPrice`: operatsion boshqaruv
+- `mint(string metadataURI)`
+  Foydalanuvchi bitta NFT mint qiladi.
+- `batchMint(string[] metadataURIs)`
+  Bitta tranzaksiyada bir nechta NFT mint qiladi.
+- `ownerMint(address recipient, string metadataURI)`
+  Admin tomonidan maxsus mint.
+- `createProposal(...)`
+  NFT egasi governance proposal yaratadi.
+- `castVote(proposalId, tokenIds, support)`
+  Token ID’lar bilan yes/no ovoz beradi.
+- `cancelProposal(proposalId)`
+  Hali vote olinmagan proposalni bekor qiladi.
+- `executeProposal(proposalId)`
+  Deadline’dan keyin proposal natijasini finalize qiladi.
+- `withdraw()`
+  Kontrakt balansini treasury’ga o'tkazadi.
+
+## Frontend imkoniyatlari
+
+Asosiy interfeys: [frontend/src/App.tsx](frontend/src/App.tsx)
+
+- Wallet ulash
+- live mint statistikasi
+- metadata builder
+- custom metadata URI orqali mint
+- holder proposal formasi
+- yes/no vote tugmalari
+- collector gallery
+- explorer havolalari
+- chain noto'g'ri bo'lsa network switch ko'rsatmasi
+
+## Dizayn va UX yondashuvi
+
+Frontend oddiy demo ko'rinishida emas, balki portfolio va himoya uchun mos professional ko'rinishda ishlangan:
+
+- kuchli hero section
+- shaffof panel va editorial card kompozitsiyasi
+- mobil va desktop uchun responsive layout
+- aniq status bannerlar
+- mint, governance va gallery bloklarining mantiqiy ajratilishi
+- foydalanuvchi uchun tushunarli call-to-action oqimi
 
 ## Lokal ishga tushirish
 
@@ -59,25 +134,43 @@ npm --prefix contracts install
 npm --prefix frontend install
 ```
 
-### 2. Smart-kontraktni compile va test qilish
+### 2. Smart-kontraktni compile qilish
 
 ```bash
 npm run contracts:compile
+```
+
+### 3. Testlarni ishga tushirish
+
+```bash
 npm run contracts:test
+```
+
+### 4. ABI ni frontendga eksport qilish
+
+```bash
 npm run contracts:export-abi
 ```
 
-### 3. Frontendni ishga tushirish
-
-`.env.example` fayldan nusxa olib kerakli qiymatlarni kiriting.
+### 5. Frontendni development rejimida ishga tushirish
 
 ```bash
 npm run frontend:dev
 ```
 
-## Testnet deploy
+### 6. Frontend production build
 
-`contracts/.env.example` asosida `contracts/.env` yarating:
+```bash
+npm run frontend:build
+```
+
+## Muhit o'zgaruvchilari
+
+Ildiz `.env.example` va bo'limlarga tegishli `.env.example` fayllar tayyor.
+
+### Smart-kontrakt uchun
+
+`contracts/.env.example` faylidan foydalaning:
 
 ```env
 CONTRACT_OWNER=0xA89c45b89b0558e866c5B983E27a61Df6b0FA968
@@ -91,18 +184,9 @@ DEPLOYER_PRIVATE_KEY=YOUR_PRIVATE_KEY
 ETHERSCAN_API_KEY=YOUR_ETHERSCAN_KEY
 ```
 
-Keyin deploy qiling:
+### Frontend uchun
 
-```bash
-npm run contracts:deploy:sepolia
-npm run contracts:export-abi
-```
-
-Deploy skripti `contracts/deployments/<network>.json` va `frontend/src/config/deployment.json` fayllarini yangilaydi.
-
-## Frontend konfiguratsiyasi
-
-`frontend/.env.example` asosida `frontend/.env` yarating:
+`frontend/.env.example` faylidan foydalaning:
 
 ```env
 VITE_CONTRACT_ADDRESS=DEPLOY_QILINGAN_MANZIL
@@ -112,33 +196,51 @@ VITE_RPC_URL=YOUR_SEPOLIA_RPC_URL
 VITE_BLOCK_EXPLORER=https://sepolia.etherscan.io
 ```
 
-## Demo ssenariysi
+## Testnet deploy
 
-1. Wallet ulang
-2. Builder orqali metadata kiriting va NFT mint qiling
-3. Yangi proposal yarating
-4. O'sha walletdagi tokenlar bilan `Vote yes` yoki `Vote no` bosing
-5. Deadline tugagach proposalni execute qiling
-6. Token gallery va explorer havolalarini ko'rsating
-
-## GitHub’ga joylash
+Sepolia deploy uchun:
 
 ```bash
-git init
-git add .
-git commit -m "feat: launch AzizbekCE NFT Studio"
-git branch -M main
-git remote add origin https://github.com/<your-username>/azizbekce-nft-studio.git
-git push -u origin main
+npm run contracts:deploy:sepolia
+npm run contracts:export-abi
 ```
 
-## Hujjatlar
+Deploy qilingandan keyin:
 
-- Arxitektura: [docs/architecture.md](/c:/Users/User/CE/4-topshiriq/docs/architecture.md)
-- Slayd deck: [docs/demo-slides.md](/c:/Users/User/CE/4-topshiriq/docs/demo-slides.md)
+- `contracts/deployments/sepolia.json` yangilanadi
+- `frontend/src/config/deployment.json` yangilanadi
+- frontend kontrakt adresini avtomatik o'qiydi
 
-## Eslatma
+## Demo ssenariysi
 
-Testnet deploy uchun funded deployer wallet, RPC URL va private key kerak bo'ladi. Repo ichidagi owner va treasury default tarzda `Azizbek` wallet manziliga sozlangan:
+1. Wallet ulanadi
+2. Metadata builder orqali NFT mint qilinadi
+3. Holder proposal yaratiladi
+4. Mavjud tokenlar bilan vote beriladi
+5. Deadline tugagach proposal execute qilinadi
+6. Token gallery va explorer sahifasi ko'rsatiladi
 
-`0xA89c45b89b0558e866c5B983E27a61Df6b0FA968`
+## Tekshiruv holati
+
+Loyiha lokal darajada tekshirildi:
+
+- smart-kontrakt compile bo'ldi
+- `6` ta test muvaffaqiyatli o'tdi
+- frontend production build muvaffaqiyatli bo'ldi
+
+## GitHub uchun tayyor materiallar
+
+- Arxitektura: [docs/architecture.md](docs/architecture.md)
+- Taqdimot slaydlari: [docs/demo-slides.md](docs/demo-slides.md)
+- GitHub about va tavsif matnlari: [docs/github-about.md](docs/github-about.md)
+
+## Muallif
+
+- Ism: `Azizbek`
+- GitHub: `azizbekce`
+- Email: `azizbekce@gmail.com`
+- Owner wallet: `0xA89c45b89b0558e866c5B983E27a61Df6b0FA968`
+
+## Litsenziya
+
+MIT License. Batafsil: [LICENSE](LICENSE)
