@@ -1,9 +1,9 @@
 {
-  "name": "azizbekce-nft-studio",
+  "name": "80tort-nft-studio",
   "private": true,
   "version": "1.0.0",
-  "description": "AzizbekCE uchun professional NFT minting va holder-governance dApp loyihasi.",
-  "author": "AzizbekCE <azizbekce@gmail.com>",
+  "description": "Odilbek uchun professional NFT minting va holder-governance dApp loyihasi.",
+  "author": "Odilbek <muhamadovodilbek2@gmail.com>",
   "scripts": {
     "contracts:compile": "npm --prefix contracts run compile",
     "contracts:test": "npm --prefix contracts run test",

@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-contract AzizbekCECollection is
+contract OdilbekCollection is
     ERC721Enumerable,
     ERC721URIStorage,
     Ownable,
@@ -74,7 +74,7 @@ contract AzizbekCECollection is
         uint256 initialMintPrice,
         uint256 initialMaxSupply,
         uint256 initialMaxMintPerWallet
-    ) ERC721("AzizbekCE Creator Editions", "AZNFT") Ownable() {
+    ) ERC721("Odilbek Creator Editions", "ODNFT") Ownable() {
         require(initialTreasury != address(0), "Treasury required");
         require(initialOwner != address(0), "Owner required");
         require(initialMaxSupply > 0, "Max supply required");

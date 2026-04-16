@@ -59,12 +59,12 @@ type StatusState = {
 };
 
 const initialMintForm: MetadataForm = {
-  name: "AzizbekCE Genesis #001",
+  name: "Odilbek Genesis #001",
   description:
     "A creator membership NFT that unlocks community voting, mint credibility, and future drop participation.",
   image: "",
-  externalUrl: "https://github.com/azizbekce",
-  attributesText: "Artist: Azizbek\nUtility: Governance\nEdition: Genesis",
+  externalUrl: "https://github.com/muhamadovodilbek2-dot",
+  attributesText: "Artist: Odilbek\nUtility: Governance\nEdition: Genesis",
   customUri: ""
 };
 
@@ -597,7 +597,7 @@ function App() {
 
       <header className="topbar">
         <div className="brand-lockup">
-          <span className="brand-lockup__mark">AZ</span>
+          <span className="brand-lockup__mark">OD</span>
           <div>
             <strong>{SITE_CONFIG.appName}</strong>
             <span>{SITE_CONFIG.collectionSymbol} testnet launch dashboard</span>

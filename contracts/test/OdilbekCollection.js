@@ -2,10 +2,10 @@ const { expect } = require("chai");
 const { ethers } = require("hardhat");
 const { loadFixture, time } = require("@nomicfoundation/hardhat-network-helpers");
 
-describe("AzizbekCECollection", function () {
+describe("OdilbekCollection", function () {
   async function deployFixture() {
     const [owner, treasury, collector, voter] = await ethers.getSigners();
-    const factory = await ethers.getContractFactory("AzizbekCECollection");
+    const factory = await ethers.getContractFactory("OdilbekCollection");
     const contract = await factory.deploy(
       owner.address,
       treasury.address,

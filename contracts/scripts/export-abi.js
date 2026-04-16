@@ -6,8 +6,8 @@ const artifactPath = path.join(
   "..",
   "artifacts",
   "contracts",
-  "AzizbekCECollection.sol",
-  "AzizbekCECollection.json"
+  "OdilbekCollection.sol",
+  "OdilbekCollection.json"
 );
 
 if (!fs.existsSync(artifactPath)) {
@@ -23,7 +23,7 @@ const targetPath = path.join(
   "frontend",
   "src",
   "lib",
-  "azizbek-ce-collection.abi.json"
+  "odilbek-collection.abi.json"
 );
 
 fs.writeFileSync(targetPath, JSON.stringify(artifact.abi, null, 2));

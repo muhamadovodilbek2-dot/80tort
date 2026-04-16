@@ -1,6 +1,6 @@
-# AzizbekCE NFT Studio
+# Odilbek NFT Studio
 
-`AzizbekCE NFT Studio` bu NFT yaratish, mint qilish va holder-governance jarayonlarini bitta professional Web3 ilovada birlashtirgan to'liq dApp loyihasi. Loyiha Solidity asosidagi ERC-721 smart-kontrakt, React frontend, deploy skriptlari, testlar va taqdimot hujjatlari bilan GitHub’ga joylashga tayyor holatda ishlab chiqilgan.
+`Odilbek NFT Studio` bu NFT yaratish, mint qilish va holder-governance jarayonlarini bitta professional Web3 ilovada birlashtirgan to'liq dApp loyihasi. Loyiha Solidity asosidagi ERC-721 smart-kontrakt, React frontend, deploy skriptlari, testlar va taqdimot hujjatlari bilan GitHub’ga joylashga tayyor holatda ishlab chiqilgan.
 
 ## Qisqacha tavsif
 
@@ -46,7 +46,7 @@ MetaMask / Wallet
 React Frontend (Vite + ethers)
         |
         v
-AzizbekCECollection.sol
+OdilbekCollection.sol
         |
         +--> NFT minting
         +--> Proposal creation
@@ -61,10 +61,10 @@ Batafsil arxitektura hujjati: [docs/architecture.md](docs/architecture.md)
 ```text
 .
 ├── contracts
-│   ├── contracts/AzizbekCECollection.sol
+│   ├── contracts/OdilbekCollection.sol
 │   ├── scripts/deploy.js
 │   ├── scripts/export-abi.js
-│   └── test/AzizbekCECollection.js
+│   └── test/OdilbekCollection.js
 ├── docs
 │   ├── architecture.md
 │   ├── demo-slides.md
@@ -80,7 +80,7 @@ Batafsil arxitektura hujjati: [docs/architecture.md](docs/architecture.md)
 
 ## Smart-kontrakt imkoniyatlari
 
-Asosiy kontrakt: [contracts/contracts/AzizbekCECollection.sol](contracts/contracts/AzizbekCECollection.sol)
+Asosiy kontrakt: [contracts/contracts/OdilbekCollection.sol](contracts/contracts/OdilbekCollection.sol)
 
 - `mint(string metadataURI)`
   Foydalanuvchi bitta NFT mint qiladi.
@@ -173,8 +173,8 @@ Ildiz `.env.example` va bo'limlarga tegishli `.env.example` fayllar tayyor.
 `contracts/.env.example` faylidan foydalaning:
 
 ```env
-CONTRACT_OWNER=0xA89c45b89b0558e866c5B983E27a61Df6b0FA968
-TREASURY_WALLET=0xA89c45b89b0558e866c5B983E27a61Df6b0FA968
+CONTRACT_OWNER=0x7b6AAE8F15b2C6b6d4F5b1Aa1970639e37b4Bd8A
+TREASURY_WALLET=0x7b6AAE8F15b2C6b6d4F5b1Aa1970639e37b4Bd8A
 CONTRACT_METADATA_URI=ipfs://YOUR_COLLECTION_METADATA.json
 MINT_PRICE_ETH=0.01
 MAX_SUPPLY=500
@@ -237,9 +237,9 @@ Loyiha lokal darajada tekshirildi:
 ## Muallif
 
 - Ism: `Azizbek`
-- GitHub: `azizbekce`
-- Email: `azizbekce@gmail.com`
-- Owner wallet: `0xA89c45b89b0558e866c5B983E27a61Df6b0FA968`
+- GitHub: `Odilbek`
+- Email: `Odilbek@gmail.com`
+- Owner wallet: `0x7b6AAE8F15b2C6b6d4F5b1Aa1970639e37b4Bd8A`
 
 ## Litsenziya
 

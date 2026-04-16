@@ -13,7 +13,7 @@ async function main() {
   const maxSupply = Number(process.env.MAX_SUPPLY || 500);
   const maxMintPerWallet = Number(process.env.MAX_MINT_PER_WALLET || 5);
 
-  const factory = await hre.ethers.getContractFactory("AzizbekCECollection");
+  const factory = await hre.ethers.getContractFactory("OdilbekCollection");
   const contract = await factory.deploy(
     owner,
     treasury,
